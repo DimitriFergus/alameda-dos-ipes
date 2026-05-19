@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="assets/png ruim.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,7 +30,7 @@
 
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
       color: var(--dark);
       background: var(--white);
       overflow-x: hidden;
@@ -70,9 +70,9 @@
       align-items: center;
       gap: 18px;
       padding: 0 28px;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .12em;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .14em;
       text-transform: uppercase;
       color: #fff;
     }
@@ -169,23 +169,24 @@
     }
     .panel-logo-text { display: flex; flex-direction: column; }
     .panel-brand {
-      font-size: .84rem;
+      font-size: .88rem;
       font-weight: 800;
       color: var(--dark);
-      letter-spacing: .03em;
+      letter-spacing: .04em;
       text-transform: uppercase;
-      line-height: 1.2;
+      line-height: 1.15;
     }
     .panel-creci {
-      font-size: .66rem;
-      font-weight: 400;
-      color: #888;
-      letter-spacing: .02em;
+      font-size: .68rem;
+      font-weight: 500;
+      color: #777;
+      letter-spacing: .01em;
     }
     .panel-tagline {
-      font-size: .66rem;
+      font-size: .68rem;
+      font-weight: 400;
       color: #aaa;
-      letter-spacing: .02em;
+      letter-spacing: .01em;
     }
     .panel-divider {
       width: 38px;
@@ -203,21 +204,21 @@
       width: 100%;
     }
     .panel-slogan-line {
-      font-size: 1.08rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--dark);
-      letter-spacing: .05em;
+      letter-spacing: .03em;
       text-transform: uppercase;
-      line-height: 1.5;
+      line-height: 1.45;
     }
-    .sl-accent { color: var(--orange); font-size: 1.22rem; font-weight: 900; }
+    .sl-accent { color: var(--orange); font-size: 1.28rem; font-weight: 800; letter-spacing: .02em; }
     .panel-slogan-cta {
-      font-size: 1.08rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--dark);
-      letter-spacing: .05em;
+      letter-spacing: .03em;
       text-transform: uppercase;
-      line-height: 1.5;
+      line-height: 1.45;
     }
     .panel-img-slider {
       width: 100%;
@@ -278,7 +279,7 @@
     }
     .pl-specs-info { display: flex; flex-direction: column; }
     .pl-specs-label {
-      font-size: .6rem;
+      font-size: .62rem;
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -286,14 +287,16 @@
       line-height: 1.4;
     }
     .pl-specs-value {
-      font-size: 1.65rem;
-      font-weight: 900;
+      font-size: 1.75rem;
+      font-weight: 800;
       color: var(--orange);
-      line-height: 1.1;
+      line-height: 1.05;
+      letter-spacing: -.01em;
     }
     .pl-specs-sub {
-      font-size: .7rem;
-      color: #999;
+      font-size: .72rem;
+      font-weight: 500;
+      color: #888;
       display: flex;
       gap: 5px;
       flex-wrap: wrap;
@@ -319,33 +322,35 @@
       flex-direction: column;
     }
     .pf-tag {
-      font-size: .65rem;
+      font-size: .66rem;
       font-weight: 700;
-      letter-spacing: .14em;
+      letter-spacing: .15em;
       text-transform: uppercase;
       color: var(--orange);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .pf-title {
-      font-size: 1.25rem;
+      font-size: 1.55rem;
       font-weight: 800;
       color: var(--dark);
-      line-height: 1.25;
-      margin-bottom: 6px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      letter-spacing: -.02em;
     }
     .pf-sub {
-      font-size: .8rem;
-      color: #777;
+      font-size: .88rem;
+      font-weight: 400;
+      color: #666;
       margin-bottom: 24px;
-      line-height: 1.55;
+      line-height: 1.6;
     }
     .pf-label {
       display: block;
-      font-size: .72rem;
+      font-size: .75rem;
       font-weight: 600;
-      color: #444;
-      margin-bottom: 6px;
-      letter-spacing: .03em;
+      color: #333;
+      margin-bottom: 7px;
+      letter-spacing: .01em;
     }
     .pf-field { margin-bottom: 14px; }
     .pf-input-wrap { position: relative; width: 100%; }
@@ -366,13 +371,14 @@
       border: 1.5px solid rgba(0,0,0,.13);
       border-radius: var(--radius);
       padding: 0 16px 0 44px;
-      font-family: inherit;
-      font-size: .92rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 400;
       color: var(--dark);
       outline: none;
       transition: border-color var(--transition), box-shadow var(--transition);
     }
-    .pf-input::placeholder { color: #c5c5c5; }
+    .pf-input::placeholder { color: #c0c0c0; font-weight: 400; }
     .pf-input:focus {
       border-color: var(--orange);
       box-shadow: 0 0 0 3px rgba(255,106,0,.1);
@@ -409,9 +415,9 @@
       height: 56px;
       background: var(--orange);
       color: #fff;
-      font-size: .92rem;
-      font-weight: 800;
-      letter-spacing: .06em;
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: .08em;
       text-transform: uppercase;
       border-radius: var(--radius);
       margin-top: 12px;
@@ -492,11 +498,11 @@
     }
     .section-title {
       font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-      font-weight: 900;
+      font-weight: 800;
       line-height: 1.1;
       color: var(--dark);
       margin-bottom: 18px;
-      letter-spacing: -.02em;
+      letter-spacing: -.03em;
     }
     .section-title span { color: var(--orange); }
     .section-text {
@@ -716,7 +722,7 @@
       border-radius: var(--radius);
       background: rgba(255,255,255,.1);
       color: #fff;
-      font-family: inherit;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: .9rem;
       padding: 0 16px;
       outline: none;
