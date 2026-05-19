@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alameda dos Ipês — Caucaia, CE | Arruda Imóveis</title>
+  <meta name="description" content="Condomínio Alameda dos Ipês em Caucaia, CE. Apartamentos com lazer completo, piscina, beach tennis, academia e muito mais. Cadastre-se e receba informações exclusivas." />
+  <link rel="icon" type="image/png" href="assets/png ruim.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:      #FF6A00;
+      --orange-dark: #e05e00;
+      --orange-glow: rgba(255,106,0,.2);
+      --dark:        #111111;
+      --dark2:       #1a1a1a;
+      --gray:        #f5f5f5;
+      --text2:       #555555;
+      --white:       #ffffff;
+      --radius:      12px;
+      --radius-lg:   18px;
+      --shadow:      0 8px 40px rgba(0,0,0,.22);
+      --transition:  .22s ease;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    svg { display: block; flex-shrink: 0; }
+
+    /* ══════════════════════════════
+       TICKER — esteira rolante
+    ══════════════════════════════ */
+    .ticker-wrap {
+      background: var(--orange);
+      overflow: hidden;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1000;
+    }
+    .ticker-track {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: ticker 28s linear infinite;
+      will-change: transform;
+    }
+    .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0 28px;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .ticker-sep {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.55);
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════
+       HERO — tela cheia com dois painéis
+    ══════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.52);
+    }
+    .hero-panels {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      display: flex;
+      gap: 20px;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    /* ── Painel esquerdo ── */
+    .panel-left {
+      flex: 0 0 420px;
+      background: rgba(17, 17, 17, 0.88);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 44px 36px 36px;
+      gap: 0;
+    }
+    .panel-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .panel-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+    .panel-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-brand {
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .panel-creci {
+      font-size: .64rem;
+      font-weight: 400;
+      color: rgba(255,255,255,.4);
+      letter-spacing: .04em;
+    }
+    .panel-tagline {
+      font-size: .65rem;
+      color: rgba(255,255,255,.35);
+      letter-spacing: .04em;
+    }
+    .panel-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--orange);
+      border-radius: 2px;
+      margin: 24px auto;
+      opacity: .7;
+    }
+    .panel-slogan {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 32px;
+    }
+    .panel-slogan-line {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.9);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      line-height: 1.55;
+    }
+    .panel-slogan-line.accent { color: var(--orange); }
+    .panel-slogan-cta {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    /* Caixa de specs laranja */
+    .panel-specs-box {
+      width: 100%;
+      background: var(--orange);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      text-align: center;
+    }
+    .specs-box-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 8px;
+    }
+    .specs-box-value {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -.01em;
+    }
+    .specs-box-sub {
+      font-size: .75rem;
+      color: rgba(255,255,255,.8);
+      margin-top: 8px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* ── Painel direito (formulário) ── */
+    .panel-right {
+      flex: 0 0 360px;
+      background: rgba(10, 10, 10, 0.92);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(14px);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+    .pf-tag {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+    .pf-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .pf-sub {
+      font-size: .8rem;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 28px;
+      line-height: 1.55;
+    }
+    .pf-label {
+      display: block;
+      font-size: .72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 6px;
+      letter-spacing: .03em;
+    }
+    .pf-field { margin-bottom: 14px; }
+    .pf-input {
+      width: 100%;
+      height: 50px;
+      background: rgba(255,255,255,.06);
+      border: 1.5px solid rgba(255,255,255,.15);
+      border-radius: var(--radius);
+      padding: 0 16px;
+      font-family: inherit;
+      font-size: .92rem;
+      color: #fff;
+      outline: none;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .pf-input::placeholder { color: rgba(255,255,255,.3); }
+    .pf-input:focus {
+      border-color: var(--orange);
+      background: rgba(255,106,0,.07);
+    }
+    .pf-btn {
+      width: 100%;
+      height: 54px;
+      background: var(--orange);
+      color: #fff;
+      font-size: .95rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      margin-top: 10px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 6px 24px rgba(255,106,0,.4);
+    }
+    .pf-btn:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(255,106,0,.5);
+    }
+    .pf-btn:active { transform: translateY(0); }
+    .pf-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      margin-top: 16px;
+    }
+    .pf-privacy svg { flex-shrink: 0; margin-top: 2px; color: rgba(255,255,255,.3); }
+    .pf-privacy p { font-size: .65rem; color: rgba(255,255,255,.3); line-height: 1.5; }
+
+    /* WhatsApp flutuante */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,.55); }
+
+    /* ══════════════════════════════
+       SEÇÃO INTRO
+    ══════════════════════════════ */
+    .intro {
+      padding: 80px 28px;
+      background: var(--gray);
+    }
+    .intro-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .intro-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow);
+    }
+    .intro-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .intro-img:hover img { transform: scale(1.04); }
+    .section-tag {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 18px;
+      letter-spacing: -.02em;
+    }
+    .section-title span { color: var(--orange); }
+    .section-text {
+      font-size: .95rem;
+      color: var(--text2);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .loc-list { display: flex; flex-direction: column; gap: 12px; }
+    .loc-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .88rem;
+      color: var(--dark);
+      font-weight: 500;
+    }
+    .loc-icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--orange-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--orange);
+    }
+
+    /* ══════════════════════════════
+       DIFERENCIAIS
+    ══════════════════════════════ */
+    .features {
+      padding: 80px 28px;
+      background: var(--dark);
+    }
+    .features-inner { max-width: 1160px; margin: 0 auto; }
+    .features-header { text-align: center; margin-bottom: 52px; }
+    .features-header .section-tag { color: var(--orange); }
+    .features-header .section-title { color: #fff; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .feat-card {
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--radius);
+      padding: 26px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .feat-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(255,106,0,.12);
+    }
+    .feat-icon {
+      width: 46px; height: 46px;
+      background: var(--orange-glow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+    }
+    .feat-name { font-size: .9rem; font-weight: 700; color: #fff; line-height: 1.3; }
+    .feat-desc { font-size: .76rem; color: rgba(255,255,255,.4); line-height: 1.55; }
+
+    /* ══════════════════════════════
+       GALERIA
+    ══════════════════════════════ */
+    .gallery { padding: 80px 0; background: #fff; overflow: hidden; }
+    .gallery-header { text-align: center; padding: 0 28px; margin-bottom: 44px; }
+    .gallery-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 0 28px 16px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .gallery-track::-webkit-scrollbar { display: none; }
+    .gal-slide {
+      flex: 0 0 400px;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      scroll-snap-align: start;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform var(--transition);
+    }
+    .gal-slide:hover { transform: scale(1.02); }
+    .gal-slide img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .gal-slide:hover img { transform: scale(1.06); }
+    .gallery-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .gal-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .gal-btn:hover { background: var(--orange-dark); transform: scale(1.08); }
+
+    /* ══════════════════════════════
+       LIGHTBOX
+    ══════════════════════════════ */
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,.93);
+      align-items: center;
+      justify-content: center;
+    }
+    .lb-overlay.active { display: flex; }
+    .lb-inner img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: var(--radius);
+      object-fit: contain;
+    }
+    .lb-close {
+      position: fixed;
+      top: 20px; right: 24px;
+      color: #fff;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      opacity: .7;
+      z-index: 10000;
+      transition: opacity var(--transition);
+    }
+    .lb-close:hover { opacity: 1; }
+    .lb-prev, .lb-next {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10000;
+      transition: background var(--transition);
+    }
+    .lb-prev { left: 20px; }
+    .lb-next { right: 20px; }
+    .lb-prev:hover, .lb-next:hover { background: rgba(255,255,255,.2); }
+
+    /* ══════════════════════════════
+       CTA FINAL
+    ══════════════════════════════ */
+    .cta-section {
+      position: relative;
+      padding: 100px 28px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cta-bg { position: absolute; inset: 0; }
+    .cta-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+    .cta-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.88) 100%);
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 660px; margin: 0 auto; }
+    .cta-inner .section-tag { color: rgba(255,255,255,.55); margin-bottom: 14px; }
+    .cta-title {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -.02em;
+    }
+    .cta-title span { color: var(--orange); }
+    .cta-text { font-size: .97rem; color: rgba(255,255,255,.65); margin-bottom: 34px; line-height: 1.7; }
+    .cta-form {
+      display: flex;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto 20px;
+      flex-wrap: wrap;
+    }
+    .cta-form input {
+      flex: 1;
+      min-width: 155px;
+      height: 52px;
+      border: 2px solid rgba(255,255,255,.2);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      font-family: inherit;
+      font-size: .9rem;
+      padding: 0 16px;
+      outline: none;
+      backdrop-filter: blur(8px);
+      transition: border-color var(--transition);
+    }
+    .cta-form input::placeholder { color: rgba(255,255,255,.4); }
+    .cta-form input:focus { border-color: var(--orange); }
+    .cta-btn {
+      height: 52px;
+      padding: 0 26px;
+      background: var(--orange);
+      color: #fff;
+      font-size: .88rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: background var(--transition), transform var(--transition);
+      white-space: nowrap;
+      box-shadow: 0 6px 24px rgba(255,106,0,.4);
+    }
+    .cta-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .cta-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.55);
+      font-size: .82rem;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    .cta-wa:hover { color: #25D366; }
+    .cta-wa svg { color: #25D366; }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .footer {
+      background: #1a1a1a;
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo img { height: 30px; width: auto; object-fit: contain; }
+    .footer-brand { font-size: .78rem; font-weight: 700; color: var(--orange); letter-spacing: .05em; }
+    .footer-copy { font-size: .7rem; color: rgba(255,255,255,.28); line-height: 1.65; }
+
+    /* ══════════════════════════════
+       TOAST
+    ══════════════════════════════ */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--dark);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: var(--radius);
+      font-size: .88rem;
+      font-weight: 500;
+      border-left: 4px solid var(--orange);
+      box-shadow: var(--shadow);
+      z-index: 9000;
+      transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+      white-space: nowrap;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ══════════════════════════════
+       RESPONSIVO
+    ══════════════════════════════ */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .panel-left { flex: 0 0 360px; }
+      .panel-right { flex: 0 0 320px; }
+    }
+    @media (max-width: 820px) {
+      .hero-panels {
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 20px;
+        gap: 16px;
+      }
+      .panel-left, .panel-right {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 460px;
+      }
+      .intro-inner { grid-template-columns: 1fr; gap: 36px; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .gal-slide { flex: 0 0 300px; }
+      .cta-form { flex-direction: column; }
+      .cta-form input { min-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .feat-card { padding: 20px 14px; }
+      .gal-slide { flex: 0 0 260px; }
+      .panel-left { padding: 32px 24px 28px; }
+      .panel-right { padding: 28px 22px; }
+      .specs-box-value { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ TICKER ESTEIRA ══ -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <!-- Bloco A -->
+      <span class="ticker-item">ÚLTIMAS UNIDADES</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">FINANCIAMENTO MINHA CASA MINHA VIDA</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">ÚLTIMAS UNIDADES</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">FINANCIAMENTO MINHA CASA MINHA VIDA</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">ÚLTIMAS UNIDADES</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">FINANCIAMENTO MINHA CASA MINHA VIDA</span>
+      <span class="ticker-sep"></span>
+      <!-- Bloco B (espelho para loop contínuo) -->
+      <span class="ticker-item">ÚLTIMAS UNIDADES</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">FINANCIAMENTO MINHA CASA MINHA VIDA</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">ÚLTIMAS UNIDADES</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">FINANCIAMENTO MINHA CASA MINHA VIDA</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">ÚLTIMAS UNIDADES</span>
+      <span class="ticker-sep"></span>
+      <span class="ticker-item">FINANCIAMENTO MINHA CASA MINHA VIDA</span>
+      <span class="ticker-sep"></span>
+    </div>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="img/3.-PISCINA.jpg" alt="Alameda dos Ipês — Condomínio" />
+    </div>
+
+    <div class="hero-panels">
+
+      <!-- PAINEL ESQUERDO: logo + frases + specs -->
+      <div class="panel-left">
+
+        <div class="panel-logo">
+          <img src="assets/png ruim.png" alt="Arruda Imóveis" />
+          <div class="panel-logo-text">
+            <span class="panel-brand">ARRUDA IMÓVEIS</span>
+            <span class="panel-creci">CRECI 19345J</span>
+            <span class="panel-tagline">Corretagem e realização</span>
+          </div>
+        </div>
+
+        <div class="panel-divider"></div>
+
+        <div class="panel-slogan">
+          <span class="panel-slogan-line">ENTRE O NATURAL</span>
+          <span class="panel-slogan-line">E O <span style="color:var(--orange)">MODERNO</span></span>
+          <span class="panel-slogan-line">O CONFORTO E A</span>
+          <span class="panel-slogan-line accent">EXCLUSIVIDADE</span>
+          <span class="panel-slogan-line">O ESTILO E A LIBERDADE</span>
+          <span class="panel-slogan-cta">FIQUE COM TUDO!</span>
+        </div>
+
+        <div class="panel-specs-box">
+          <p class="specs-box-label">Apartamentos de</p>
+          <p class="specs-box-value">52,71m²</p>
+          <p class="specs-box-sub">
+            2 Quartos · 1 Suíte · Varanda<br />
+            1 Vaga de Garagem · Caucaia, CE
+          </p>
+        </div>
+
+      </div>
+
+      <!-- PAINEL DIREITO: formulário -->
+      <div class="panel-right">
+        <p class="pf-tag">Cadastro exclusivo</p>
+        <h1 class="pf-title">Receba condições especiais de lançamento</h1>
+        <p class="pf-sub">Preencha seus dados e um especialista entrará em contato.</p>
+
+        <form id="heroForm" onsubmit="submitForm(event,'heroForm')">
+          <div class="pf-field">
+            <label class="pf-label" for="heroNome">Nome*</label>
+            <input class="pf-input" id="heroNome" type="text" name="nome" placeholder="Seu nome completo" required />
+          </div>
+          <div class="pf-field">
+            <label class="pf-label" for="heroTel">Telefone*</label>
+            <input class="pf-input" id="heroTel" type="tel" name="telefone" placeholder="(85) 9 0000-0000" required />
+          </div>
+          <button type="submit" class="pf-btn">QUERO ME CADASTRAR</button>
+        </form>
+
+        <div class="pf-privacy">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <p>Seus dados estão protegidos e não serão compartilhados com terceiros.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ INTRO ══ -->
+  <section class="intro">
+    <div class="intro-inner">
+      <div class="intro-img">
+        <img src="img/2.-LAZER.jpg" alt="Área de lazer Alameda dos Ipês" />
+      </div>
+      <div>
+        <p class="section-tag">Sobre o empreendimento</p>
+        <h2 class="section-title">Viver bem é uma <span>escolha</span></h2>
+        <p class="section-text">
+          O Alameda dos Ipês foi projetado para quem busca qualidade de vida sem abrir mão de praticidade e localização. Situado em Caucaia, CE, a poucos minutos de Fortaleza, o condomínio oferece infraestrutura de lazer completa, acabamento de alto padrão e um ambiente pensado para toda a família.
+        </p>
+        <div class="loc-list">
+          <div class="loc-item">
+            <div class="loc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            Conj. Vicente Arruda · Caucaia, CE
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            Fácil acesso à CE-085 e rodovias principais
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            Apartamentos de 2 quartos com 1 suíte e varanda
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a1 1 0 00-.8-.4H5.24a2 2 0 00-1.8 1.1l-.8 1.63A6 6 0 002 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+            </div>
+            1 vaga de garagem inclusa
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DIFERENCIAIS ══ -->
+  <section class="features">
+    <div class="features-inner">
+      <div class="features-header">
+        <p class="section-tag">Infraestrutura completa</p>
+        <h2 class="section-title" style="color:#fff">Lazer que <span>impressiona</span></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17H2a3 3 0 0 0 3-3V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v5a3 3 0 0 0 3 3z"/><path d="M2 17c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2"/></svg></div>
+          <span class="feat-name">Piscina com Raia</span>
+          <span class="feat-desc">Piscina adulto com raia para natação e área de lazer aquático.</span>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>
+          <span class="feat-name">Academia Interna</span>
+          <span class="feat-desc">Musculação e cardio em ambiente climatizado e moderno.</span>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <span class="feat-name">Academia Externa</span>
+          <span class="feat-desc">Equipamentos ao ar livre para atividades físicas em contato com a natureza.</span>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="4"/><path d="M12 8v8M8 10c0 0 1 2 4 2s4-2 4-2"/></svg></div>
+          <span class="feat-name">Beach Tennis</span>
+          <span class="feat-desc">Quadra profissional para o esporte mais em alta do momento.</span>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+          <span class="feat-name">Quadra Poliesportiva</span>
+          <span class="feat-desc">Futebol, basquete e outros esportes para toda a família.</span>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+          <span class="feat-name">Deck & Caramanchão</span>
+          <span class="feat-desc">Áreas de convivência ao ar livre para relaxar com a família.</span>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg></div>
+          <span class="feat-name">Espaço Pet</span>
+          <span class="feat-desc">Área dedicada aos pets com espaço para banho e socialização.</span>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <span class="feat-name">Redário & Relax</span>
+          <span class="feat-desc">Espaço ao ar livre com redário ideal para descansar e contemplar.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALERIA ══ -->
+  <section class="gallery" id="galeria">
+    <div class="gallery-header">
+      <p class="section-tag">Galeria de fotos</p>
+      <h2 class="section-title">Conheça cada <span>detalhe</span></h2>
+    </div>
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gal-slide" data-idx="0"><img src="img/3.-PISCINA.jpg" alt="Piscina" /></div>
+      <div class="gal-slide" data-idx="1"><img src="img/4.-PISCINA-NOTURNA.jpg" alt="Piscina noturna" /></div>
+      <div class="gal-slide" data-idx="2"><img src="img/5.-DECK.jpg" alt="Deck" /></div>
+      <div class="gal-slide" data-idx="3"><img src="img/10.-BEACH-TENNIS.jpg" alt="Beach Tennis" /></div>
+      <div class="gal-slide" data-idx="4"><img src="img/11.-ACADEMIA-INTERNA.jpg" alt="Academia interna" /></div>
+      <div class="gal-slide" data-idx="5"><img src="img/6.-CARAMANCHAO.jpg" alt="Caramanchão" /></div>
+      <div class="gal-slide" data-idx="6"><img src="img/1.-ESTAR.jpg" alt="Sala de estar" /></div>
+      <div class="gal-slide" data-idx="7"><img src="img/4.-SUITE.jpg" alt="Suíte" /></div>
+      <div class="gal-slide" data-idx="8"><img src="img/6.-VARANDA.jpg" alt="Varanda" /></div>
+      <div class="gal-slide" data-idx="9"><img src="img/2.-JANTAR-E-COZINHA.jpg" alt="Sala de jantar e cozinha" /></div>
+    </div>
+    <div class="gallery-nav">
+      <button class="gal-btn" id="galPrev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="gal-btn" id="galNext"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </section>
+
+  <!-- ══ LIGHTBOX ══ -->
+  <div class="lb-overlay" id="lbOverlay">
+    <button class="lb-close" id="lbClose">✕</button>
+    <div class="lb-inner"><img id="lbImg" src="" alt="" /></div>
+    <button class="lb-prev" id="lbPrev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="lb-next" id="lbNext"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+  </div>
+
+  <!-- ══ CTA FINAL ══ -->
+  <section class="cta-section">
+    <div class="cta-bg">
+      <img src="img/4.-PISCINA-NOTURNA.jpg" alt="Piscina noturna Alameda dos Ipês" />
+    </div>
+    <div class="cta-inner">
+      <p class="section-tag">Não perca essa oportunidade</p>
+      <h2 class="cta-title">Garanta seu apartamento no <span>Alameda dos Ipês</span></h2>
+      <p class="cta-text">Vagas limitadas com condições especiais de lançamento. Cadastre-se agora e receba todas as informações antes do público geral.</p>
+      <form class="cta-form" id="ctaForm" onsubmit="submitForm(event,'ctaForm')">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="tel" name="telefone" placeholder="(85) 9 0000-0000" required />
+        <button type="submit" class="cta-btn">Cadastrar</button>
+      </form>
+      <a href="https://wa.me/558596996085" target="_blank" class="cta-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Ou fale direto no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="assets/png ruim.png" alt="Arruda Imóveis" />
+        <span class="footer-brand">ARRUDA IMÓVEIS</span>
+      </div>
+      <p class="footer-copy">
+        © 2025 Arruda Imóveis · CRECI 19345J · Todos os direitos reservados<br />
+        Imagens meramente ilustrativas. Informações sujeitas a alteração sem aviso prévio.
+      </p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/558596996085" target="_blank" class="wa-float" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ══ TOAST ══ -->
+  <div class="toast" id="toast">Cadastro realizado! Em breve entraremos em contato.</div>
+
+  <script>
+    /* Máscara de telefone */
+    document.querySelectorAll('input[type="tel"]').forEach(inp => {
+      inp.addEventListener('input', () => {
+        let v = inp.value.replace(/\D/g, '').slice(0, 11);
+        if (v.length > 2)  v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+        if (v.length > 10) v = v.slice(0,10) + '-' + v.slice(10);
+        inp.value = v;
+      });
+    });
+
+    /* Formulário — integração com CRM a definir */
+    function submitForm(e, formId) {
+      e.preventDefault();
+      const form = document.getElementById(formId);
+      const nome = form.querySelector('[name="nome"]').value.trim();
+      const tel  = form.querySelector('[name="telefone"]').value.trim();
+      // TODO: endpoint CRM
+      console.log('Lead:', { nome, tel, empreendimento: 'Alameda dos Ipês' });
+      form.reset();
+      showToast();
+    }
+    function showToast() {
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 4000);
+    }
+
+    /* Galeria */
+    const track  = document.getElementById('galleryTrack');
+    const slides = document.querySelectorAll('.gal-slide');
+    const slideW = () => (slides[0]?.offsetWidth || 400) + 16;
+    document.getElementById('galPrev').addEventListener('click', () => track.scrollBy({ left: -slideW() * 2, behavior: 'smooth' }));
+    document.getElementById('galNext').addEventListener('click', () => track.scrollBy({ left:  slideW() * 2, behavior: 'smooth' }));
+
+    /* Lightbox */
+    const lbOverlay = document.getElementById('lbOverlay');
+    const lbImg = document.getElementById('lbImg');
+    let lbIdx = 0;
+    const srcs = Array.from(slides).map(s => s.querySelector('img').src);
+    const openLb = idx => { lbIdx = idx; lbImg.src = srcs[lbIdx]; lbOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; };
+    const closeLb = () => { lbOverlay.classList.remove('active'); document.body.style.overflow = ''; };
+    const lbGo = d => { lbIdx = (lbIdx + d + srcs.length) % srcs.length; lbImg.src = srcs[lbIdx]; };
+    slides.forEach((s, i) => s.addEventListener('click', () => openLb(i)));
+    document.getElementById('lbClose').addEventListener('click', closeLb);
+    document.getElementById('lbPrev').addEventListener('click', () => lbGo(-1));
+    document.getElementById('lbNext').addEventListener('click', () => lbGo(1));
+    lbOverlay.addEventListener('click', e => { if (e.target === lbOverlay) closeLb(); });
+    document.addEventListener('keydown', e => {
+      if (!lbOverlay.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLb();
+      if (e.key === 'ArrowLeft') lbGo(-1);
+      if (e.key === 'ArrowRight') lbGo(1);
+    });
+  </script>
+</body>
+</html>
