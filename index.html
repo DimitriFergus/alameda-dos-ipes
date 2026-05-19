@@ -129,8 +129,8 @@
     /* ── Painel esquerdo ── */
     .panel-left {
       flex: 0 0 420px;
-      background: rgba(17, 17, 17, 0.88);
-      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(0,0,0,.08);
       border-radius: var(--radius-lg);
       backdrop-filter: blur(14px);
       display: flex;
@@ -165,12 +165,12 @@
     .panel-creci {
       font-size: .64rem;
       font-weight: 400;
-      color: rgba(255,255,255,.4);
+      color: #999;
       letter-spacing: .04em;
     }
     .panel-tagline {
       font-size: .65rem;
-      color: rgba(255,255,255,.35);
+      color: #aaa;
       letter-spacing: .04em;
     }
     .panel-divider {
@@ -191,7 +191,7 @@
     .panel-slogan-line {
       font-size: 1.05rem;
       font-weight: 700;
-      color: rgba(255,255,255,.9);
+      color: var(--dark);
       letter-spacing: .08em;
       text-transform: uppercase;
       line-height: 1.55;
@@ -200,7 +200,7 @@
     .panel-slogan-cta {
       font-size: 1.3rem;
       font-weight: 900;
-      color: var(--white);
+      color: var(--dark);
       letter-spacing: .06em;
       text-transform: uppercase;
       margin-top: 10px;
@@ -240,8 +240,8 @@
     /* ── Painel direito (formulário) ── */
     .panel-right {
       flex: 0 0 360px;
-      background: rgba(10, 10, 10, 0.92);
-      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,0.96);
+      border: 1px solid rgba(0,0,0,.07);
       border-radius: var(--radius-lg);
       backdrop-filter: blur(14px);
       padding: 40px 32px;
@@ -259,13 +259,13 @@
     .pf-title {
       font-size: 1.25rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--dark);
       line-height: 1.25;
       margin-bottom: 6px;
     }
     .pf-sub {
       font-size: .8rem;
-      color: rgba(255,255,255,.45);
+      color: #777;
       margin-bottom: 28px;
       line-height: 1.55;
     }
@@ -273,7 +273,7 @@
       display: block;
       font-size: .72rem;
       font-weight: 600;
-      color: rgba(255,255,255,.7);
+      color: #444;
       margin-bottom: 6px;
       letter-spacing: .03em;
     }
@@ -281,20 +281,20 @@
     .pf-input {
       width: 100%;
       height: 58px;
-      background: rgba(255,255,255,.06);
-      border: 1.5px solid rgba(255,255,255,.15);
+      background: #f5f5f5;
+      border: 1.5px solid rgba(0,0,0,.12);
       border-radius: var(--radius);
       padding: 0 16px;
       font-family: inherit;
       font-size: .92rem;
-      color: #fff;
+      color: var(--dark);
       outline: none;
       transition: border-color var(--transition), background var(--transition);
     }
-    .pf-input::placeholder { color: rgba(255,255,255,.3); }
+    .pf-input::placeholder { color: #bbb; }
     .pf-input:focus {
       border-color: var(--orange);
-      background: rgba(255,106,0,.07);
+      background: rgba(255,106,0,.05);
     }
     .pf-btn {
       width: 100%;
@@ -322,8 +322,8 @@
       gap: 7px;
       margin-top: 16px;
     }
-    .pf-privacy svg { flex-shrink: 0; margin-top: 2px; color: rgba(255,255,255,.3); }
-    .pf-privacy p { font-size: .65rem; color: rgba(255,255,255,.3); line-height: 1.5; }
+    .pf-privacy svg { flex-shrink: 0; margin-top: 2px; color: #bbb; }
+    .pf-privacy p { font-size: .65rem; color: #bbb; line-height: 1.5; }
 
     /* Consent checkbox */
     .pf-consent {
@@ -343,7 +343,7 @@
     }
     .pf-consent label {
       font-size: .7rem;
-      color: rgba(255,255,255,.5);
+      color: #777;
       line-height: 1.55;
       cursor: pointer;
     }
@@ -1075,7 +1075,7 @@
       </form>
       <div class="pf-consent" style="justify-content:center;margin-top:14px;">
         <input type="checkbox" id="ctaConsent" required form="ctaForm" />
-        <label for="ctaConsent" style="color:rgba(255,255,255,.45);">
+        <label for="ctaConsent" style="color:rgba(255,255,255,.65);">
           Li e concordo com o <a href="termo-consentimento.html" target="_blank" class="pf-consent-link">Termo de Consentimento</a>.
         </label>
       </div>
