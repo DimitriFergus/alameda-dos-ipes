@@ -129,122 +129,191 @@
     /* ── Painel esquerdo ── */
     .panel-left {
       flex: 0 0 420px;
-      background: linear-gradient(160deg, #ffffff 25%, #FF6A00 100%);
-      border: 1px solid rgba(255,255,255,.3);
+      background: #FAF3EC;
+      border: 1px solid rgba(0,0,0,.07);
       border-radius: var(--radius-lg);
-      backdrop-filter: blur(14px);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 44px 36px 36px;
+      align-items: flex-start;
+      padding: 36px 32px 28px;
       gap: 0;
+      position: relative;
+      overflow: hidden;
     }
+    .pl-arc {
+      position: absolute;
+      border-radius: 50%;
+      border: 1.5px solid rgba(0,0,0,.07);
+      pointer-events: none;
+    }
+    .pl-arc-1 { width: 230px; height: 230px; top: -95px; right: -95px; }
+    .pl-arc-2 { width: 165px; height: 165px; top: -58px; right: -58px; }
+    .pl-arc-3 { width: 100px; height: 100px; top: -20px; right: -20px; }
     .panel-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
+      gap: 14px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
     }
-    .panel-logo img {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
-    }
-    .panel-logo-text {
+    .pl-logo-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--orange);
+      border-radius: 13px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
+    .panel-logo-text { display: flex; flex-direction: column; }
     .panel-brand {
-      font-size: .78rem;
+      font-size: .84rem;
       font-weight: 800;
-      color: var(--orange);
-      letter-spacing: .06em;
+      color: var(--dark);
+      letter-spacing: .03em;
       text-transform: uppercase;
       line-height: 1.2;
     }
     .panel-creci {
-      font-size: .64rem;
+      font-size: .66rem;
       font-weight: 400;
-      color: #999;
-      letter-spacing: .04em;
+      color: #888;
+      letter-spacing: .02em;
     }
     .panel-tagline {
-      font-size: .65rem;
+      font-size: .66rem;
       color: #aaa;
-      letter-spacing: .04em;
+      letter-spacing: .02em;
     }
     .panel-divider {
-      width: 48px;
+      width: 38px;
       height: 2px;
-      background: rgba(255,255,255,.6);
+      background: var(--orange);
       border-radius: 2px;
-      margin: 24px auto;
+      margin: 22px 0;
     }
     .panel-slogan {
-      text-align: center;
+      text-align: left;
       display: flex;
       flex-direction: column;
-      gap: 2px;
-      margin-bottom: 32px;
+      gap: 0;
+      margin-bottom: 20px;
+      width: 100%;
     }
     .panel-slogan-line {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       font-weight: 700;
-      color: #fff;
-      letter-spacing: .08em;
+      color: var(--dark);
+      letter-spacing: .05em;
       text-transform: uppercase;
-      line-height: 1.55;
-      text-shadow: 0 1px 4px rgba(0,0,0,.18);
-    }
-    .panel-slogan-line.accent { color: #fff; font-weight: 900; }
-    .panel-slogan-cta {
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      margin-top: 10px;
-      text-shadow: 0 1px 6px rgba(0,0,0,.2);
-    }
-
-    /* Caixa de specs laranja */
-    .panel-specs-box {
-      width: 100%;
-      background: var(--orange);
-      border-radius: var(--radius);
-      padding: 22px 24px;
-      text-align: center;
-    }
-    .specs-box-label {
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.75);
-      margin-bottom: 8px;
-    }
-    .specs-box-value {
-      font-size: 1.7rem;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.2;
-      letter-spacing: -.01em;
-    }
-    .specs-box-sub {
-      font-size: .75rem;
-      color: rgba(255,255,255,.8);
-      margin-top: 8px;
-      font-weight: 500;
       line-height: 1.5;
+    }
+    .sl-accent { color: var(--orange); font-size: 1.22rem; font-weight: 900; }
+    .panel-slogan-cta {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+    .panel-img-slider {
+      width: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 16/9;
+      flex-shrink: 0;
+      margin-bottom: 14px;
+    }
+    .pis-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.1s ease;
+    }
+    .pis-slide.active { opacity: 1; }
+    .pis-dots {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      display: flex;
+      gap: 5px;
+      z-index: 3;
+    }
+    .pis-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.55);
+      transition: background .4s;
+    }
+    .pis-dot.active { background: #fff; }
+    .pl-specs-card {
+      width: 100%;
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 14px 16px 12px;
+    }
+    .pl-specs-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .pl-specs-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--orange);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .pl-specs-info { display: flex; flex-direction: column; }
+    .pl-specs-label {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #999;
+      line-height: 1.4;
+    }
+    .pl-specs-value {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1.1;
+    }
+    .pl-specs-sub {
+      font-size: .7rem;
+      color: #999;
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .pl-specs-sep {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #ccc;
+      flex-shrink: 0;
     }
 
     /* ── Painel direito (formulário) ── */
     .panel-right {
       flex: 0 0 360px;
-      background: rgba(255,255,255,0.96);
+      background: #fff;
       border: 1px solid rgba(0,0,0,.07);
       border-radius: var(--radius-lg);
-      backdrop-filter: blur(14px);
       padding: 40px 32px;
       display: flex;
       flex-direction: column;
@@ -267,7 +336,7 @@
     .pf-sub {
       font-size: .8rem;
       color: #777;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       line-height: 1.55;
     }
     .pf-label {
@@ -279,59 +348,40 @@
       letter-spacing: .03em;
     }
     .pf-field { margin-bottom: 14px; }
+    .pf-input-wrap { position: relative; width: 100%; }
+    .pf-input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ccc;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+    }
     .pf-input {
       width: 100%;
       height: 58px;
-      background: #f5f5f5;
-      border: 1.5px solid rgba(0,0,0,.12);
+      background: #fff;
+      border: 1.5px solid rgba(0,0,0,.13);
       border-radius: var(--radius);
-      padding: 0 16px;
+      padding: 0 16px 0 44px;
       font-family: inherit;
       font-size: .92rem;
       color: var(--dark);
       outline: none;
-      transition: border-color var(--transition), background var(--transition);
+      transition: border-color var(--transition), box-shadow var(--transition);
     }
-    .pf-input::placeholder { color: #bbb; }
+    .pf-input::placeholder { color: #c5c5c5; }
     .pf-input:focus {
       border-color: var(--orange);
-      background: rgba(255,106,0,.05);
+      box-shadow: 0 0 0 3px rgba(255,106,0,.1);
     }
-    .pf-btn {
-      width: 100%;
-      height: 54px;
-      background: var(--orange);
-      color: #fff;
-      font-size: .95rem;
-      font-weight: 800;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      border-radius: var(--radius);
-      margin-top: 10px;
-      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 6px 24px rgba(255,106,0,.4);
-    }
-    .pf-btn:hover {
-      background: var(--orange-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(255,106,0,.5);
-    }
-    .pf-btn:active { transform: translateY(0); }
-    .pf-privacy {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-      margin-top: 16px;
-    }
-    .pf-privacy svg { flex-shrink: 0; margin-top: 2px; color: #bbb; }
-    .pf-privacy p { font-size: .65rem; color: #bbb; line-height: 1.5; }
-
-    /* Consent checkbox */
     .pf-consent {
       display: flex;
       align-items: flex-start;
       gap: 9px;
-      margin-top: 12px;
+      margin-top: 4px;
       margin-bottom: 4px;
     }
     .pf-consent input[type="checkbox"] {
@@ -354,77 +404,38 @@
       transition: opacity var(--transition);
     }
     .pf-consent-link:hover { opacity: .75; }
-
-    /* Image Slider no painel esquerdo */
-    .panel-img-slider {
+    .pf-btn {
       width: 100%;
-      border-radius: var(--radius);
-      overflow: hidden;
-      position: relative;
-      aspect-ratio: 16/10;
-      flex-shrink: 0;
-    }
-    .pis-slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1.1s ease;
-      border-radius: var(--radius);
-    }
-    .pis-slide.active { opacity: 1; }
-    .pis-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.3) 60%, transparent 100%);
-      padding: 28px 16px 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      z-index: 2;
-      border-radius: 0 0 var(--radius) var(--radius);
-    }
-    .pis-label {
-      font-size: .62rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.65);
-      margin-bottom: 4px;
-    }
-    .pis-value {
-      font-size: 1.55rem;
-      font-weight: 900;
+      height: 56px;
+      background: var(--orange);
       color: #fff;
-      line-height: 1.1;
-    }
-    .pis-sub {
-      font-size: .68rem;
-      color: rgba(255,255,255,.75);
-      margin-top: 5px;
-      font-weight: 500;
-    }
-    .pis-dots {
-      position: absolute;
-      top: 10px;
-      right: 12px;
+      font-size: .92rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      margin-top: 12px;
       display: flex;
-      gap: 5px;
-      z-index: 3;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 6px 24px rgba(255,106,0,.4);
     }
-    .pis-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.35);
-      transition: background .4s;
+    .pf-btn:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(255,106,0,.5);
     }
-    .pis-dot.active { background: var(--orange); }
+    .pf-btn:active { transform: translateY(0); }
+    .pf-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      margin-top: 16px;
+    }
+    .pf-privacy svg { flex-shrink: 0; margin-top: 2px; color: #bbb; }
+    .pf-privacy p { font-size: .65rem; color: #bbb; line-height: 1.5; }
 
     /* WhatsApp flutuante */
     .wa-float {
@@ -863,11 +874,16 @@
 
     <div class="hero-panels">
 
-      <!-- PAINEL ESQUERDO: logo + frases + specs -->
+      <!-- PAINEL ESQUERDO -->
       <div class="panel-left">
+        <div class="pl-arc pl-arc-1"></div>
+        <div class="pl-arc pl-arc-2"></div>
+        <div class="pl-arc pl-arc-3"></div>
 
         <div class="panel-logo">
-          <img src="assets/png ruim.png" alt="Arruda Imóveis" />
+          <div class="pl-logo-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
           <div class="panel-logo-text">
             <span class="panel-brand">ARRUDA IMÓVEIS</span>
             <span class="panel-creci">CRECI 19345J</span>
@@ -879,7 +895,7 @@
 
         <div class="panel-slogan">
           <span class="panel-slogan-line">LAZER, CONFORTO</span>
-          <span class="panel-slogan-line">E <span style="color:var(--orange)">EXCLUSIVIDADE</span></span>
+          <span class="panel-slogan-line">E <span class="sl-accent">EXCLUSIVIDADE</span></span>
           <span class="panel-slogan-cta">NO MESMO LUGAR.</span>
         </div>
 
@@ -892,10 +908,28 @@
           <img class="pis-slide"        src="img/4.-SUITE.jpg"             alt="Suíte" />
           <img class="pis-slide"        src="img/6.-VARANDA.jpg"           alt="Varanda" />
           <div class="pis-dots" id="pisDots"></div>
-          <div class="pis-caption">
-            <span class="pis-label">Apartamentos de</span>
-            <span class="pis-value">52,71 m²</span>
-            <span class="pis-sub">2 Quartos · 1 Suíte · Varanda · 1 Vaga · Caucaia, CE</span>
+        </div>
+
+        <div class="pl-specs-card">
+          <div class="pl-specs-top">
+            <div class="pl-specs-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+            </div>
+            <div class="pl-specs-info">
+              <span class="pl-specs-label">Apartamentos de</span>
+              <span class="pl-specs-value">52,71 m²</span>
+            </div>
+          </div>
+          <div class="pl-specs-sub">
+            <span>2 Quartos</span>
+            <span class="pl-specs-sep"></span>
+            <span>1 Suíte</span>
+            <span class="pl-specs-sep"></span>
+            <span>Varanda</span>
+            <span class="pl-specs-sep"></span>
+            <span>1 Vaga</span>
+            <span class="pl-specs-sep"></span>
+            <span>Caucaia, CE</span>
           </div>
         </div>
 
@@ -904,17 +938,27 @@
       <!-- PAINEL DIREITO: formulário -->
       <div class="panel-right">
         <p class="pf-tag">Cadastro exclusivo</p>
-        <h1 class="pf-title">Receba condições especiais de lançamento</h1>
+        <h1 class="pf-title">Receba condições especiais de <span style="color:var(--orange)">lançamento.</span></h1>
         <p class="pf-sub">Preencha seus dados e um especialista entrará em contato.</p>
 
         <form id="heroForm" onsubmit="submitForm(event,'heroForm')">
           <div class="pf-field">
             <label class="pf-label" for="heroNome">Nome*</label>
-            <input class="pf-input" id="heroNome" type="text" name="nome" placeholder="Seu nome completo" required />
+            <div class="pf-input-wrap">
+              <span class="pf-input-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+              </span>
+              <input class="pf-input" id="heroNome" type="text" name="nome" placeholder="Seu nome completo" required />
+            </div>
           </div>
           <div class="pf-field">
             <label class="pf-label" for="heroTel">Telefone*</label>
-            <input class="pf-input" id="heroTel" type="tel" name="telefone" placeholder="(85) 9 0000-0000" required />
+            <div class="pf-input-wrap">
+              <span class="pf-input-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.41 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17z"/></svg>
+              </span>
+              <input class="pf-input" id="heroTel" type="tel" name="telefone" placeholder="(85) 9 0000-0000" required />
+            </div>
           </div>
           <div class="pf-consent">
             <input type="checkbox" id="heroConsent" required />
@@ -922,7 +966,10 @@
               Li e concordo com o <a href="termo-consentimento.html" target="_blank" class="pf-consent-link">Termo de Consentimento</a> para tratamento de dados pessoais.
             </label>
           </div>
-          <button type="submit" class="pf-btn">QUERO ME CADASTRAR</button>
+          <button type="submit" class="pf-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            QUERO ME CADASTRAR
+          </button>
         </form>
 
         <div class="pf-privacy">
