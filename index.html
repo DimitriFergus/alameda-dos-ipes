@@ -129,8 +129,8 @@
     /* ── Painel esquerdo ── */
     .panel-left {
       flex: 0 0 420px;
-      background: rgba(255,255,255,0.94);
-      border: 1px solid rgba(0,0,0,.08);
+      background: linear-gradient(160deg, #ffffff 25%, #FF6A00 100%);
+      border: 1px solid rgba(255,255,255,.3);
       border-radius: var(--radius-lg);
       backdrop-filter: blur(14px);
       display: flex;
@@ -176,10 +176,9 @@
     .panel-divider {
       width: 48px;
       height: 2px;
-      background: var(--orange);
+      background: rgba(255,255,255,.6);
       border-radius: 2px;
       margin: 24px auto;
-      opacity: .7;
     }
     .panel-slogan {
       text-align: center;
@@ -191,19 +190,21 @@
     .panel-slogan-line {
       font-size: 1.05rem;
       font-weight: 700;
-      color: var(--dark);
+      color: #fff;
       letter-spacing: .08em;
       text-transform: uppercase;
       line-height: 1.55;
+      text-shadow: 0 1px 4px rgba(0,0,0,.18);
     }
-    .panel-slogan-line.accent { color: var(--orange); }
+    .panel-slogan-line.accent { color: #fff; font-weight: 900; }
     .panel-slogan-cta {
       font-size: 1.3rem;
       font-weight: 900;
-      color: var(--dark);
+      color: #fff;
       letter-spacing: .06em;
       text-transform: uppercase;
       margin-top: 10px;
+      text-shadow: 0 1px 6px rgba(0,0,0,.2);
     }
 
     /* Caixa de specs laranja */
