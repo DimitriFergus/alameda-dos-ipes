@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termo de Consentimento — Arruda Imóveis</title>
+  <link rel="icon" type="image/png" href="assets/png ruim.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #FF6A00;
+      --dark:   #111111;
+      --gray:   #f5f5f5;
+      --text:   #333333;
+      --text2:  #666666;
+      --radius: 12px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.7;
+    }
+    a { color: var(--orange); text-decoration: underline; }
+
+    /* Topo */
+    .page-header {
+      background: var(--dark);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .page-header img { height: 36px; width: auto; object-fit: contain; }
+    .header-brand {
+      font-size: .8rem;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .header-creci {
+      font-size: .65rem;
+      color: rgba(255,255,255,.35);
+    }
+
+    /* Conteúdo */
+    .tc-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 60px 28px 80px;
+    }
+    .tc-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .tc-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 10px;
+      letter-spacing: -.02em;
+    }
+    .tc-updated {
+      font-size: .78rem;
+      color: var(--text2);
+      margin-bottom: 40px;
+    }
+    .tc-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--orange);
+      border-radius: 2px;
+      margin-bottom: 40px;
+    }
+
+    .tc-section { margin-bottom: 40px; }
+    .tc-section h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+    .tc-section h2 span {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background: var(--orange);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 800;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      margin-right: 10px;
+    }
+    .tc-section p {
+      font-size: .92rem;
+      color: var(--text2);
+      margin-bottom: 12px;
+    }
+    .tc-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tc-section ul li {
+      font-size: .92rem;
+      color: var(--text2);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .tc-section ul li::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    /* Destaque */
+    .tc-highlight {
+      background: var(--gray);
+      border-left: 4px solid var(--orange);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: .88rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Contato box */
+    .tc-contact-box {
+      background: var(--dark);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin-top: 16px;
+    }
+    .tc-contact-box p { color: rgba(255,255,255,.65); font-size: .88rem; margin-bottom: 8px; }
+    .tc-contact-box a { color: var(--orange); }
+    .tc-contact-box strong { color: #fff; }
+
+    /* Rodapé */
+    .tc-footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+      font-size: .75rem;
+      color: var(--text2);
+      line-height: 1.8;
+    }
+    .tc-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--dark);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .tc-back:hover { color: var(--orange); }
+    .tc-back svg { flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="page-header">
+    <img src="assets/png ruim.png" alt="Arruda Imóveis" />
+    <div>
+      <div class="header-brand">Arruda Imóveis</div>
+      <div class="header-creci">CRECI 19345J</div>
+    </div>
+  </header>
+
+  <!-- Conteúdo -->
+  <main class="tc-wrap">
+
+    <a href="index.html" class="tc-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
+      Voltar ao site
+    </a>
+
+    <span class="tc-badge">LGPD — Lei 13.709/2018</span>
+    <h1 class="tc-title">Termo de Consentimento para<br />Tratamento de Dados Pessoais</h1>
+    <p class="tc-updated">Última atualização: 19 de maio de 2026</p>
+    <div class="tc-divider"></div>
+
+    <!-- 1 -->
+    <div class="tc-section">
+      <h2><span>1</span>Quem somos</h2>
+      <p>
+        <strong>Arruda Imóveis</strong>, inscrita sob CRECI 19345J, com sede no estado do Ceará,
+        é a empresa responsável pelo tratamento dos dados pessoais coletados neste site,
+        nos termos da Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018).
+      </p>
+      <p>
+        A coleta de dados ocorre exclusivamente no contexto do interesse do usuário
+        em conhecer e adquirir imóveis comercializados pela Arruda Imóveis, especificamente
+        o empreendimento <strong>Alameda dos Ipês</strong>, localizado em Caucaia, CE.
+      </p>
+    </div>
+
+    <!-- 2 -->
+    <div class="tc-section">
+      <h2><span>2</span>Dados coletados</h2>
+      <p>Ao preencher o formulário de cadastro neste site, coletamos exclusivamente:</p>
+      <ul>
+        <li><strong>Nome completo</strong> — para identificação e personalização do atendimento.</li>
+        <li><strong>Número de telefone</strong> — para contato por parte de um especialista da Arruda Imóveis.</li>
+      </ul>
+      <div class="tc-highlight">
+        Não coletamos dados sensíveis como CPF, RG, endereço, dados financeiros ou
+        informações de saúde. O formulário não exige criação de conta ou senha.
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="tc-section">
+      <h2><span>3</span>Finalidade do tratamento</h2>
+      <p>Os dados fornecidos são utilizados exclusivamente para:</p>
+      <ul>
+        <li>Contato comercial sobre o empreendimento Alameda dos Ipês e outros imóveis da Arruda Imóveis;</li>
+        <li>Envio de informações, condições especiais e materiais sobre o empreendimento de interesse;</li>
+        <li>Agendamento de visitas e atendimento personalizado por corretores credenciados;</li>
+        <li>Registro interno de leads para fins de gestão comercial.</li>
+      </ul>
+    </div>
+
+    <!-- 4 -->
+    <div class="tc-section">
+      <h2><span>4</span>Base legal</h2>
+      <p>
+        O tratamento dos seus dados tem como base legal o <strong>consentimento</strong>
+        (art. 7º, inciso I, da LGPD), fornecido de forma livre, informada e inequívoca
+        ao marcar a caixa de consentimento no formulário de cadastro.
+      </p>
+      <p>
+        Além do consentimento, o tratamento pode se basear no <strong>legítimo interesse</strong>
+        da Arruda Imóveis (art. 7º, inciso IX) para gestão do relacionamento comercial,
+        observados sempre os limites da finalidade declarada.
+      </p>
+    </div>
+
+    <!-- 5 -->
+    <div class="tc-section">
+      <h2><span>5</span>Compartilhamento de dados</h2>
+      <p>
+        Seus dados <strong>não são vendidos</strong> a terceiros. Eles podem ser compartilhados
+        exclusivamente com:
+      </p>
+      <ul>
+        <li>Corretores de imóveis parceiros da Arruda Imóveis, estritamente para fins de atendimento;</li>
+        <li>Plataformas de CRM (gestão de relacionamento com clientes) utilizadas internamente pela Arruda Imóveis, sob contrato de confidencialidade;</li>
+        <li>Autoridades públicas, quando exigido por lei ou determinação judicial.</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="tc-section">
+      <h2><span>6</span>Armazenamento e segurança</h2>
+      <p>
+        Os dados coletados são armazenados em ambientes seguros, com controle de acesso
+        restrito a colaboradores autorizados. Adotamos medidas técnicas e organizacionais
+        adequadas para proteger suas informações contra acesso não autorizado, alteração,
+        divulgação ou destruição.
+      </p>
+      <p>
+        Os dados são mantidos pelo período necessário ao cumprimento das finalidades
+        descritas neste termo ou conforme exigido por legislação aplicável, sendo excluídos
+        ou anonimizados após esse prazo.
+      </p>
+    </div>
+
+    <!-- 7 -->
+    <div class="tc-section">
+      <h2><span>7</span>Seus direitos (LGPD)</h2>
+      <p>Em conformidade com a LGPD, você possui os seguintes direitos em relação aos seus dados:</p>
+      <ul>
+        <li><strong>Confirmação e acesso</strong> — confirmar se tratamos seus dados e acessá-los;</li>
+        <li><strong>Correção</strong> — solicitar a correção de dados incompletos ou desatualizados;</li>
+        <li><strong>Anonimização ou exclusão</strong> — pedir a anonimização, bloqueio ou eliminação dos seus dados;</li>
+        <li><strong>Portabilidade</strong> — solicitar a portabilidade para outro fornecedor de serviço;</li>
+        <li><strong>Revogação do consentimento</strong> — retirar seu consentimento a qualquer momento, sem prejuízo do tratamento já realizado;</li>
+        <li><strong>Oposição</strong> — se opor ao tratamento realizado com base em legítimo interesse;</li>
+        <li><strong>Reclamação à ANPD</strong> — apresentar reclamação à Autoridade Nacional de Proteção de Dados.</li>
+      </ul>
+    </div>
+
+    <!-- 8 -->
+    <div class="tc-section">
+      <h2><span>8</span>Como exercer seus direitos</h2>
+      <p>
+        Para exercer qualquer um dos direitos listados acima, ou para esclarecer dúvidas
+        sobre o tratamento dos seus dados, entre em contato conosco:
+      </p>
+      <div class="tc-contact-box">
+        <p><strong>Arruda Imóveis — Encarregado de Dados (DPO)</strong></p>
+        <p>
+          WhatsApp: <a href="https://wa.me/558596996085" target="_blank">(85) 9 6999-6085</a><br />
+          E-mail: <a href="mailto:contato@arrudaimoveis.com.br">contato@arrudaimoveis.com.br</a>
+        </p>
+        <p style="margin-top:10px;font-size:.78rem;">
+          O prazo para resposta às solicitações é de até <strong>15 dias úteis</strong>,
+          conforme previsto na LGPD.
+        </p>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="tc-section">
+      <h2><span>9</span>Cookies e rastreamento</h2>
+      <p>
+        Este site pode utilizar cookies técnicos essenciais para o funcionamento das páginas.
+        Não utilizamos cookies de rastreamento de terceiros ou pixels publicitários sem o
+        seu consentimento prévio. Ao navegar neste site, você concorda com o uso de
+        cookies estritamente necessários.
+      </p>
+    </div>
+
+    <!-- 10 -->
+    <div class="tc-section">
+      <h2><span>10</span>Alterações neste termo</h2>
+      <p>
+        Este Termo de Consentimento pode ser atualizado periodicamente para refletir mudanças
+        em nossas práticas ou na legislação aplicável. Recomendamos que você o revisite
+        regularmente. A data da última atualização está indicada no topo deste documento.
+      </p>
+      <div class="tc-highlight">
+        Ao marcar a caixa de consentimento no formulário de cadastro, você declara que leu,
+        compreendeu e concorda integralmente com este Termo de Consentimento.
+      </div>
+    </div>
+
+    <div class="tc-footer">
+      <p>© 2026 Arruda Imóveis · CRECI 19345J · Todos os direitos reservados</p>
+      <p>Em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018)</p>
+    </div>
+
+  </main>
+
+</body>
+</html>

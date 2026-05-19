@@ -280,7 +280,7 @@
     .pf-field { margin-bottom: 14px; }
     .pf-input {
       width: 100%;
-      height: 50px;
+      height: 58px;
       background: rgba(255,255,255,.06);
       border: 1.5px solid rgba(255,255,255,.15);
       border-radius: var(--radius);
@@ -324,6 +324,106 @@
     }
     .pf-privacy svg { flex-shrink: 0; margin-top: 2px; color: rgba(255,255,255,.3); }
     .pf-privacy p { font-size: .65rem; color: rgba(255,255,255,.3); line-height: 1.5; }
+
+    /* Consent checkbox */
+    .pf-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+    .pf-consent input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--orange);
+      cursor: pointer;
+    }
+    .pf-consent label {
+      font-size: .7rem;
+      color: rgba(255,255,255,.5);
+      line-height: 1.55;
+      cursor: pointer;
+    }
+    .pf-consent-link {
+      color: var(--orange);
+      text-decoration: underline;
+      transition: opacity var(--transition);
+    }
+    .pf-consent-link:hover { opacity: .75; }
+
+    /* Image Slider no painel esquerdo */
+    .panel-img-slider {
+      width: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 16/10;
+      flex-shrink: 0;
+    }
+    .pis-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.1s ease;
+      border-radius: var(--radius);
+    }
+    .pis-slide.active { opacity: 1; }
+    .pis-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.3) 60%, transparent 100%);
+      padding: 28px 16px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      z-index: 2;
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+    .pis-label {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.65);
+      margin-bottom: 4px;
+    }
+    .pis-value {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .pis-sub {
+      font-size: .68rem;
+      color: rgba(255,255,255,.75);
+      margin-top: 5px;
+      font-weight: 500;
+    }
+    .pis-dots {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      display: flex;
+      gap: 5px;
+      z-index: 3;
+    }
+    .pis-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.35);
+      transition: background .4s;
+    }
+    .pis-dot.active { background: var(--orange); }
 
     /* WhatsApp flutuante */
     .wa-float {
@@ -777,21 +877,25 @@
         <div class="panel-divider"></div>
 
         <div class="panel-slogan">
-          <span class="panel-slogan-line">ENTRE O NATURAL</span>
-          <span class="panel-slogan-line">E O <span style="color:var(--orange)">MODERNO</span></span>
-          <span class="panel-slogan-line">O CONFORTO E A</span>
-          <span class="panel-slogan-line accent">EXCLUSIVIDADE</span>
-          <span class="panel-slogan-line">O ESTILO E A LIBERDADE</span>
-          <span class="panel-slogan-cta">FIQUE COM TUDO!</span>
+          <span class="panel-slogan-line">LAZER, CONFORTO</span>
+          <span class="panel-slogan-line">E <span style="color:var(--orange)">EXCLUSIVIDADE</span></span>
+          <span class="panel-slogan-cta">NO MESMO LUGAR.</span>
         </div>
 
-        <div class="panel-specs-box">
-          <p class="specs-box-label">Apartamentos de</p>
-          <p class="specs-box-value">52,71m²</p>
-          <p class="specs-box-sub">
-            2 Quartos · 1 Suíte · Varanda<br />
-            1 Vaga de Garagem · Caucaia, CE
-          </p>
+        <div class="panel-img-slider">
+          <img class="pis-slide active" src="img/3.-PISCINA.jpg"           alt="Piscina" />
+          <img class="pis-slide"        src="img/4.-PISCINA-NOTURNA.jpg"   alt="Piscina noturna" />
+          <img class="pis-slide"        src="img/2.-LAZER.jpg"             alt="Área de lazer" />
+          <img class="pis-slide"        src="img/10.-BEACH-TENNIS.jpg"     alt="Beach Tennis" />
+          <img class="pis-slide"        src="img/11.-ACADEMIA-INTERNA.jpg" alt="Academia" />
+          <img class="pis-slide"        src="img/4.-SUITE.jpg"             alt="Suíte" />
+          <img class="pis-slide"        src="img/6.-VARANDA.jpg"           alt="Varanda" />
+          <div class="pis-dots" id="pisDots"></div>
+          <div class="pis-caption">
+            <span class="pis-label">Apartamentos de</span>
+            <span class="pis-value">52,71 m²</span>
+            <span class="pis-sub">2 Quartos · 1 Suíte · Varanda · 1 Vaga · Caucaia, CE</span>
+          </div>
         </div>
 
       </div>
@@ -810,6 +914,12 @@
           <div class="pf-field">
             <label class="pf-label" for="heroTel">Telefone*</label>
             <input class="pf-input" id="heroTel" type="tel" name="telefone" placeholder="(85) 9 0000-0000" required />
+          </div>
+          <div class="pf-consent">
+            <input type="checkbox" id="heroConsent" required />
+            <label for="heroConsent">
+              Li e concordo com o <a href="termo-consentimento.html" target="_blank" class="pf-consent-link">Termo de Consentimento</a> para tratamento de dados pessoais.
+            </label>
           </div>
           <button type="submit" class="pf-btn">QUERO ME CADASTRAR</button>
         </form>
@@ -963,6 +1073,12 @@
         <input type="tel" name="telefone" placeholder="(85) 9 0000-0000" required />
         <button type="submit" class="cta-btn">Cadastrar</button>
       </form>
+      <div class="pf-consent" style="justify-content:center;margin-top:14px;">
+        <input type="checkbox" id="ctaConsent" required form="ctaForm" />
+        <label for="ctaConsent" style="color:rgba(255,255,255,.45);">
+          Li e concordo com o <a href="termo-consentimento.html" target="_blank" class="pf-consent-link">Termo de Consentimento</a>.
+        </label>
+      </div>
       <a href="https://wa.me/558596996085" target="_blank" class="cta-wa">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Ou fale direto no WhatsApp
@@ -1046,6 +1162,29 @@
       if (e.key === 'ArrowLeft') lbGo(-1);
       if (e.key === 'ArrowRight') lbGo(1);
     });
+
+    /* Slider do painel esquerdo */
+    (function() {
+      const pisSlides = document.querySelectorAll('.pis-slide');
+      const dotsContainer = document.getElementById('pisDots');
+      let pisIdx = 0;
+
+      pisSlides.forEach((_, i) => {
+        const d = document.createElement('span');
+        d.className = 'pis-dot' + (i === 0 ? ' active' : '');
+        dotsContainer.appendChild(d);
+      });
+
+      const dots = dotsContainer.querySelectorAll('.pis-dot');
+
+      setInterval(() => {
+        pisSlides[pisIdx].classList.remove('active');
+        dots[pisIdx].classList.remove('active');
+        pisIdx = (pisIdx + 1) % pisSlides.length;
+        pisSlides[pisIdx].classList.add('active');
+        dots[pisIdx].classList.add('active');
+      }, 3800);
+    })();
   </script>
 </body>
 </html>
