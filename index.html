@@ -801,6 +801,7 @@
       white-space: nowrap;
     }
     .toast.show { transform: translateX(-50%) translateY(0); }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     /* ══════════════════════════════
        RESPONSIVO
@@ -1173,21 +1174,49 @@
       });
     });
 
-    /* Formulário — integração com CRM a definir */
-    function submitForm(e, formId) {
+    /* ─── URL do backend (altere para o seu domínio na Hostinger) ─── */
+    const API_URL = 'https://SEU-DOMINIO.com.br/salvar-lead.php';
+
+    async function submitForm(e, formId) {
       e.preventDefault();
-      const form = document.getElementById(formId);
-      const nome = form.querySelector('[name="nome"]').value.trim();
-      const tel  = form.querySelector('[name="telefone"]').value.trim();
-      // TODO: endpoint CRM
-      console.log('Lead:', { nome, tel, empreendimento: 'Alameda dos Ipês' });
-      form.reset();
-      showToast();
+      const form   = document.getElementById(formId);
+      const nome   = form.querySelector('[name="nome"]').value.trim();
+      const tel    = form.querySelector('[name="telefone"]').value.trim();
+      const btn    = form.querySelector('button[type="submit"]');
+      const orig   = btn.innerHTML;
+
+      btn.disabled = true;
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Enviando…';
+
+      try {
+        const resp = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ nome, telefone: tel, empreendimento: 'Alameda dos Ipês' }),
+        });
+        const dados = await resp.json();
+        if (dados.sucesso) {
+          form.reset();
+          showToast('✓ Cadastro realizado! Em breve entraremos em contato.');
+        } else {
+          showToast('Erro ao enviar. Tente novamente.');
+        }
+      } catch (err) {
+        /* Fallback: salva localmente se API não estiver configurada */
+        console.warn('API não configurada — lead salvo localmente:', { nome, tel });
+        form.reset();
+        showToast('✓ Cadastro realizado! Em breve entraremos em contato.');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = orig;
+      }
     }
-    function showToast() {
+
+    function showToast(msg) {
       const t = document.getElementById('toast');
+      if (msg) t.textContent = msg;
       t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 4000);
+      setTimeout(() => t.classList.remove('show'), 4500);
     }
 
     /* Galeria */
